@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import { firstValueFrom, Observable } from 'rxjs'; // will be use for API calling
 import { AppDispatch, RootState } from '../store/index';
 
@@ -14,6 +14,8 @@ const createOrderAsyncThunk = createAsyncThunk.withTypes<{
   state: RootState;
   dispatch: AppDispatch;
 }>();
+
+console.log(createOrderAsyncThunk, 'createOrderAsyncThunk');
 
 const initialState: placeholderState = {};
 const placeholder = createSlice({
