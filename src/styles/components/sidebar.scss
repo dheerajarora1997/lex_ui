@@ -1,0 +1,17 @@
+.sidebar {
+  height: calc(100vh - 50px);
+  min-width: 220px;
+  .recent-search,
+  .saved-search {
+    display: inline-block;
+    width: 100%;
+    .search-result {
+      min-height: 100px;
+      max-height: 400px;
+      overflow: hidden;
+      &:hover {
+        overflow-y: auto;
+      }
+    }
+  }
+}
