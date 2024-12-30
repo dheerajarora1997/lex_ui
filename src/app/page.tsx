@@ -1,19 +1,18 @@
-import Image from 'next/image';
-import styles from '../styles/Button.module.scss';
+// import Image from 'next/image';
+// import styles from '../styles/main.module.scss';
+import BlankChat from './component/blankChat';
+import Navbar from './component/navbar';
+import Sidebar from './component/sidebar';
+import RootLayout from './layout';
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <Image
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <button className={styles.button}>Hello world</button>
+    <RootLayout>
+      <main className="pt-5 d-flex">
+        <Navbar />
+        <Sidebar />
+        <BlankChat />
       </main>
-    </div>
+    </RootLayout>
   );
 }

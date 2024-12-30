@@ -1,13 +1,20 @@
-import { configureStore } from '@reduxjs/toolkit';
-
-const placeholderReducer = (state = {}) => {
-  return state;
-};
+import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
+import appReducer from '../appredux/rootReducer';
+export type AppThunk = ThunkAction<
+  Promise<void>,
+  RootState,
+  unknown,
+  Action<string>
+>;
+export type AppThunkReturn<ReturnType> = ThunkAction<
+  Promise<ReturnType>,
+  RootState,
+  unknown,
+  Action<string>
+>;
 
 export const store = configureStore({
-  reducer: {
-    placeholder: placeholderReducer,
-  },
+  reducer: appReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
